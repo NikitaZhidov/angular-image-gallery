@@ -1,0 +1,17 @@
+<div class="pagination">
+  <button
+    *ngIf="onSelectPrevPage"
+    class="pagination__button"
+    [class.disabled]="!hasPrevPage"
+    [disabled]="!hasPrevPage"
+    (click)="selectPrevPage()"
+  >Prev</button>
+  <span class="pagination__num">{{currentPage}}</span>
+  <button
+    *ngIf="onSelectNextPage"
+    class="pagination__button"
+    [class.disabled]="!hasNextPage"
+    [disabled]="!hasNextPage"
+    (click)="selectNextPage()"
+  >Next</button>
+</div>

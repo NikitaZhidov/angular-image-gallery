@@ -1,0 +1,153 @@
+.image-info__wrapper {
+  width: 100%;
+  padding: 15px 10px;
+}
+
+.image-info__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 10px;
+  border-bottom: 1px solid #e2e2e2;
+  margin-bottom: 15px;
+
+  justify-content: center;
+  text-align: center;
+
+  height: 30vw;
+
+  @media (max-width: 900px) {
+    height: 50vw;
+  }
+
+  @media (max-width: 600px) {
+    height: 70vw;
+  }
+}
+
+.image-info__img {
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+
+  @media (max-width: 900px) {
+    width: 90%;
+  }
+
+  @media (max-width: 600px) {
+    width: 95%;
+  }
+
+  img {
+    border-radius: 10px;
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+
+    @media (max-width: 900px) {
+      width: 90%;
+    }
+
+    @media (max-width: 600px) {
+      width: 95%;
+    }
+  }
+}
+
+.image-info__link {
+  text-align: center;
+  display: block;
+  font-weight: 700;
+  text-decoration: none;
+  color: #7b95c9;
+
+  padding: 15px 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.image-info-preloader {
+  width: 100%;
+  height: 30vw;
+}
+
+.image-info__body {
+  padding: 10px 20px 20px 20px;
+  border-radius: 5px;
+
+  border: 1px solid #e2e2e2;
+
+  @media (max-width: 600px) {
+    padding: 7px;
+  }
+}
+
+.image-info__content {
+  width: 100%;
+}
+
+.image-info__title {
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #5e5e5e;
+  padding: 0;
+  margin-bottom: 18px;
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}
+
+.image-info__table {
+  display: block;
+  max-width: 90%;
+  margin: 0 auto;
+
+  tbody {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  td {
+    max-width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  td:first-child {
+    font-weight: 300;
+    font-size: 16px;
+    @media (max-width: 500px) {
+      font-size: 12px;
+    }
+  }
+
+  td:nth-child(2) {
+    font-weight: 400;
+    font-size: 20px;
+    @media (max-width: 500px) {
+      font-size: 14px;
+    }
+  }
+
+  a {
+    color: #7b95c9;
+    text-decoration: none;
+    font-weight: 300;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

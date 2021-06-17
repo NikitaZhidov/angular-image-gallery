@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+@import "nullstyle";
+
+html {
+  font-size: 18px;
+}
+
+* {
+  font-family: Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.err-msg {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+
+  padding: 5px;
+  text-align: center;
+
+  border-radius: 5px;
+
+  margin: 10px 0;
+}

@@ -1,0 +1,64 @@
+<div *ngIf="errorMsg" class="err-msg">
+  An error has occurred. Please try again later. <br>
+  Error message: {{errorMsg}} <br>
+  <a [routerLink]="['/']">Back</a>
+</div>
+
+<div *ngIf="isLoading; else imageInfo" class="image-info-preloader">
+  <app-preloader *ngIf="!errorMsg"></app-preloader>
+</div>
+
+
+<ng-template #imageInfo>
+  <div *ngIf="img" class="image-info__wrapper" >
+
+    <a [routerLink]="['/']" class="image-info__link">View all images</a>
+
+    <div class="image-info__head">
+      <div class="image-info__img">
+        <img [src]="compressedImgUrl" [alt]="img.author">
+      </div>
+      <a [href]="img.download_url" class="image-info__link" target="_blank">Show in full size</a>
+    </div>
+
+    <div class="image-info__body">
+
+      <h3 class="image-info__title">
+        Photo Information
+      </h3>
+
+      <div class="image-info__content">
+        <table class="image-info__table">
+          <tbody>
+          <tr>
+            <td>Id</td>
+            <td>{{img.id}}</td>
+          </tr>
+          <tr>
+            <td>Author</td>
+            <td>{{img.author}}</td>
+          </tr>
+          <tr>
+            <td>Width</td>
+            <td>{{img.width}}</td>
+          </tr>
+          <tr>
+            <td>Height</td>
+            <td>{{img.height}}</td>
+          </tr>
+          <tr>
+            <td>URL</td>
+            <td><a [href]="img.url" target="_blank">{{img.url}}</a></td>
+          </tr>
+          <tr>
+            <td>Download URL</td>
+            <td><a [href]="img.download_url" target="_blank">{{img.download_url}}</a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</ng-template>

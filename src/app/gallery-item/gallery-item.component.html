@@ -1,0 +1,9 @@
+<a *ngIf="img" [routerLink]="['/image', img.id]" class="gallery__item" target="_blank">
+  <div class="gallery__image">
+    <span class="gallery__author">{{img.author}}</span>
+    <img [src]="compressedImgUrl" alt="img">
+  </div>
+  <div class="gallery__id">
+     <span>#{{img.id}}</span>
+  </div>
+</a>

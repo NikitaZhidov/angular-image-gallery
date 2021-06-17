@@ -1,0 +1,37 @@
+<div class="gallery__wrapper">
+
+  <div *ngIf="errorMsg" class="err-msg">
+    An error has occurred. Please try again later. <br>
+    Error message: {{errorMsg}} <br>
+    <a [routerLink]="['/']">Back</a>
+  </div>
+
+  <div *ngIf="isLoading; else gallery"
+       class="gallery-preloader">
+    <app-preloader *ngIf="!errorMsg"></app-preloader>
+  </div>
+
+
+  <ng-template #gallery>
+    <div class="gallery">
+      <app-gallery-item *ngFor="let image of images" [img]="image"></app-gallery-item>
+    </div>
+  </ng-template>
+
+  <app-pagination
+    *ngIf="images.length; else noImagesMsg"
+    [currentPage]="currentPage"
+    [hasPrevPage]="hasPrevPage"
+    [hasNextPage]="hasNextPage"
+    (onSelectPrevPage)="selectPrevPage()"
+    (onSelectNextPage)="selectNextPage()"
+  ></app-pagination>
+
+  <ng-template #noImagesMsg>
+    <div class="gallery__msg" *ngIf="!isLoading">
+      No images on {{currentPage}} page<br/>
+      <a (click)="goToFirstPage()">Back</a>
+    </div>
+  </ng-template>
+
+</div>
